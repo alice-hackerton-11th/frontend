@@ -1,3 +1,8 @@
+html, body {
+  background-color: #1A1B1E;
+  color: #FFF;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +15,22 @@ a {
   width: 100%;
   text-decoration: none;
   color: inherit;
+}
+
+:root {
+  --Gray-1: #898989;
+  --Gray-2: #656565;
+  --Gray-3: #646569;
+  --Gray-4: #515255;
+  --Gray-5: #333333;
+  --Gray-6: #26272B;
+  --Gray-7: #1A1B1E;
+
+  --Green: #00C108;
+  --Magenta: #CF297F;
+
+  --Positive-Color: var(--Green);
+  --Negative-Color: var(--Magenta);
 }
 
 ::-webkit-scrollbar {
