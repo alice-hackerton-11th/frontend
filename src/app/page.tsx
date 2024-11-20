@@ -1,9 +1,9 @@
 import Typo from '@/components/ui/Typography'
 import { HStack, VStack } from '@cottons-kr/react-foundation'
 import HomeNameInput from '@/components/page/home/NameInput'
+import Checkbox from '@/components/ui/Checkbox'
 
 import s from './page.module.scss'
-import Checkbox from '@/components/ui/Checkbox'
 
 export default function HomePage() {
   return <>

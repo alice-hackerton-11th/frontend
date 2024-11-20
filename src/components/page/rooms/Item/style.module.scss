@@ -1,0 +1,13 @@
+.item {
+  height: 70px;
+  padding: 0 30px;
+  background-color: var(--Gray-6);
+  border-radius: 10px;
+
+  *:nth-child(1) { width: 121px; }
+  *:nth-child(2) { width: 429px; }
+  *:nth-child(3) { width: 229px; }
+  *:nth-child(4) { width: 185px; }
+  *:nth-child(5) { width: 203px; }
+  *:nth-child(6) { width: 20px; }
+}

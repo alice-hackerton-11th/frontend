@@ -1,0 +1,12 @@
+.title {
+  height: 70px;
+  padding: 0 30px;
+  background-color: #000;
+  border-radius: 10px;
+
+  p:nth-child(1) { width: 121px; }
+  p:nth-child(2) { width: 429px; }
+  p:nth-child(3) { width: 229px; }
+  p:nth-child(4) { width: 185px; }
+  p:nth-child(5) { width: 203px; }
+}

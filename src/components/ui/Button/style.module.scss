@@ -2,6 +2,9 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: filter 0.3s;
   &:hover {
     filter: brightness(0.9);
@@ -13,9 +16,15 @@
   color: #000;
 }
 
-.positive {}
+.positive {
+  background-color: var(--Positive-Color);
+  color: #FFF;
+}
 
-.negative {}
+.negative {
+  background-color: var(--Negative-Color);
+  color: #FFF;
+}
 
 .large {
   height: 70px;
