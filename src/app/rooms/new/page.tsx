@@ -1,6 +1,8 @@
 import { Flex, HStack, VStack } from '@cottons-kr/react-foundation'
 import Typo from '@/components/ui/Typography'
 import Button from '@/components/ui/Button'
+import Dropdown from '@/components/ui/Dropdown'
+import RangeInput from '@/components/ui/RangeInput'
 
 import s from './page.module.scss'
 
@@ -24,15 +26,22 @@ export default function NewRoomPage() {
         >
           <HStack align='center' justify='between'>
             <Typo size={24} weight={500}>Topic</Typo>
+            <Dropdown
+              options={[
+                { label: '(비상) 통합과학 1단원. 물질과 규칙성', value: '1' },
+                { label: '(비상) 통합과학 2단원. 물질과 규칙성', value: '2' },
+                { label: '(비상) 통합과학 3단원. 물질과 규칙성', value: '3' },
+              ]}
+              style={{ width: 550 }}
+            />
           </HStack>
           <HStack align='center' justify='between'>
             <Typo size={24} weight={500}>Members</Typo>
+            <RangeInput min={1} max={8} />
           </HStack>
           <HStack align='center' justify='between'>
             <Typo size={24} weight={500}>Explanation Time (secs)</Typo>
-          </HStack>
-          <HStack align='center' justify='between'>
-            <Typo size={24} weight={500}>Members</Typo>
+            <RangeInput />
           </HStack>
         </VStack>
         <HStack justify='center' gap={20}>

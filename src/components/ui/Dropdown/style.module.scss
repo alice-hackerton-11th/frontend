@@ -1,0 +1,13 @@
+.select {
+  height: 57px;
+  padding: 0 20px;
+  background-color: var(--Gray-4);
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-size: 18px;
+  font-family: inherit;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}

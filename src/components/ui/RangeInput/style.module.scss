@@ -1,0 +1,52 @@
+.range button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #FFF;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &::before, &::after {
+    transition: background-color 0.3s;
+  }
+
+  &:first-of-type::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 3px;
+    background-color: var(--Positive-Color);
+    transform: translate(-50%, -50%);
+  }
+  &:last-of-type {
+    &::before, &::after  {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 3px;
+      background-color: var(--Positive-Color);
+      transform: translate(-50%, -50%);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &:disabled {
+    background-color: var(--Gray-3);
+    cursor: not-allowed;
+    &::before, &::after {
+      background-color: var(--Gray-4);
+    }
+  }
+}
+
+.value {
+  background-color: var(--Gray-4);
+  border: 1px solid #FFF;
+}
