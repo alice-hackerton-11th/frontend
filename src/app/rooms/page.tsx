@@ -1,7 +1,9 @@
-import { HStack, VStack } from '@cottons-kr/react-foundation'
+import { HStack, Spacer, VStack } from '@cottons-kr/react-foundation'
 import TableTitle from '@/components/page/rooms/Title'
 import TableItem from '@/components/page/rooms/Item'
 import Typo from '@/components/ui/Typography'
+import { Color } from '@/constants/color'
+import Button from '@/components/ui/Button'
 
 import s from './page.module.scss'
 
@@ -17,7 +19,13 @@ export default function RoomsPage() {
         <TableItem />
         <TableItem />
       </VStack>
-      <HStack></HStack>
+      <HStack align='end' justify='between'>
+        <Spacer width='189px' />
+        <Typo size={18} color={Color.Gray1}>1 / 5</Typo>
+        <Button style={{ width: 189 }}>
+          <Typo size={18}>+ Make Room</Typo>
+        </Button>
+      </HStack>
     </VStack>
   </>
 }
