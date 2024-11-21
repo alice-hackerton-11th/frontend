@@ -4,7 +4,7 @@ import cn from 'classnames'
 import s from './style.module.scss'
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'positive' | 'negative'
+  variant?: 'primary' | 'secondary' | 'positive' | 'negative'
   size?: 'large' | 'small'
 }
 

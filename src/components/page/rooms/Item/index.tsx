@@ -11,8 +11,8 @@ export default function RoomsTableItem() {
       <Typo size={18} weight={600} color={Color.Gray1}>001</Typo>
       <Typo size={18} weight={600}>(비상) 통합과학 1단원. 물질과 규칙성</Typo>
       <div>
-        <Button size='small' variant='positive' style={{ width: 146 }}>
-          <Typo size={18}>Enter room</Typo>
+        <Button size='small' variant='secondary' style={{ width: 146 }}>
+          <Typo size={18} weight={600}>입장하기</Typo>
         </Button>
       </div>
       <Typo size={18} weight={600}>5/5</Typo>
