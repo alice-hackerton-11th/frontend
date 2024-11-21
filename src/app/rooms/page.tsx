@@ -23,7 +23,7 @@ export default function RoomsPage() {
         <Spacer width='189px' />
         <Typo size={18} color={Color.Gray1}>1 / 5</Typo>
         <Button style={{ width: 189 }}>
-          <Typo size={18}>+ Make Room</Typo>
+          <Typo size={18} weight={600}>+ 새로 만들기</Typo>
         </Button>
       </HStack>
     </VStack>

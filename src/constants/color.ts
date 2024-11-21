@@ -11,7 +11,9 @@ export const enum Color {
   White = '#FFF',
   Green = 'var(--Green)',
   Magenta = 'var(--Magenta)',
+  Yellow = 'var(--Yellow)',
   
+  PrimaryColor = 'var(--Primary-Color)',
   PositiveColor = 'var(--Positive-Color)',
   NegativeColor = 'var(--Negative-Color)',
 }

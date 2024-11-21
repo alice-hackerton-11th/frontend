@@ -6,11 +6,11 @@ import s from './style.module.scss'
 export default function RoomsTableTitle() {
   return <>
     <HStack className={s.title} align='center' justify='between'>
-      <Typo size={18}>Num.</Typo>
-      <Typo size={18}>Topics</Typo>
-      <Typo size={18}>State</Typo>
-      <Typo size={18}>Members</Typo>
-      <Typo size={18}>Settings</Typo>
+      <Typo size={18}></Typo>
+      <Typo size={18}>주제</Typo>
+      <Typo size={18}>상태</Typo>
+      <Typo size={18}>인원 수</Typo>
+      <Typo size={18}>설정</Typo>
       <Spacer width='20px' />
     </HStack>
   </>

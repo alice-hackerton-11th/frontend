@@ -18,14 +18,14 @@ export default function NewRoomPage() {
         style={{ width: 1000 }}
       >
         <Flex className={s.title}>
-          <Typo size={18} weight={500}>Room setting</Typo>
+          <Typo size={18} weight={500}>방 설정</Typo>
         </Flex>
         <VStack
           justify='center' gap={20}
           style={{ width: 686 }}
         >
           <HStack align='center' justify='between'>
-            <Typo size={24} weight={500}>Topic</Typo>
+            <Typo size={24} weight={500}>주제</Typo>
             <Dropdown
               options={[
                 { label: '(비상) 통합과학 1단원. 물질과 규칙성', value: '1' },
@@ -36,11 +36,11 @@ export default function NewRoomPage() {
             />
           </HStack>
           <HStack align='center' justify='between'>
-            <Typo size={24} weight={500}>Members</Typo>
+            <Typo size={24} weight={500}>인원 수</Typo>
             <RangeInput min={1} max={8} />
           </HStack>
           <HStack align='center' justify='between'>
-            <Typo size={24} weight={500}>Explanation Time (secs)</Typo>
+            <Typo size={24} weight={500}>설명 시간 (초 단위)</Typo>
             <RangeInput />
           </HStack>
         </VStack>
