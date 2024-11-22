@@ -5,18 +5,21 @@ import Button from '@/components/ui/Button'
 
 import s from './style.module.scss'
 
-export default function RoomsTableItem() {
+type RoomsTableItemProps = {
+  data: Room
+}
+export default function RoomsTableItem(props: RoomsTableItemProps) {
   return <>
     <HStack className={s.item} align='center' justify='between'>
-      <Typo size={18} weight={600} color={Color.Gray1}>001</Typo>
-      <Typo size={18} weight={600}>(비상) 통합과학 1단원. 물질과 규칙성</Typo>
+      <Typo size={18} weight={600} color={Color.Gray1}>{props.data.roomId.toString().padStart(3, '0')}</Typo>
+      <Typo size={18} weight={600}>{props.data.subject}</Typo>
       <div>
         <Button size='small' variant='secondary' style={{ width: 146 }}>
           <Typo size={18} weight={600}>입장하기</Typo>
         </Button>
       </div>
-      <Typo size={18} weight={600}>5/5</Typo>
-      <Typo size={18} weight={600}>15초 / 3라운드</Typo>
+      <Typo size={18} weight={600}>{props.data.memberCount}</Typo>
+      <Typo size={18} weight={600}>{props.data.explanationSecond}초 / 3라운드</Typo>
       <Typo size={18} color={Color.Gray1}>-</Typo>
     </HStack>
   </>

@@ -10,18 +10,21 @@ interface RangeInputProps {
   defaultValue?: number
   min?: number
   max?: number
+  onValueChange?: (value: number) => unknown
 }
 
 export default function RangeInput(props: RangeInputProps) {
   const [value, setValue] = useState(props.defaultValue || props.min || 0)
 
   const onClickIncrease = useCallback(() => {
-    setValue(prev => prev + 1)
-  }, [])
+    setValue(value + 1)
+    props.onValueChange?.(value + 1)
+  }, [value, props.onValueChange])
 
   const onClickDecrease = useCallback(() => {
-    setValue(prev => prev - 1)
-  }, [])
+    setValue(value - 1)
+    props.onValueChange?.(value - 1)
+  }, [value, props.onValueChange])
 
   return <>
     <HStack
