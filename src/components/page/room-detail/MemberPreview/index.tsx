@@ -6,7 +6,10 @@ import { Flex, VStack } from '@cottons-kr/react-foundation'
 
 import s from './style.module.scss'
 
-export default function RoomsMemberPreview() {
+type RoomsMemberPreviewProps = {
+  name?: string
+}
+export default function RoomsMemberPreview(props: RoomsMemberPreviewProps) {
   return <>
     <VStack
       align='center' gap={15}
@@ -14,7 +17,7 @@ export default function RoomsMemberPreview() {
     >
       <Flex direction='column' align='center' gap={10}>
         <Typo size={18} color={Color.Gray1}>Player 1</Typo>
-        <Typo size={24} weight={500}>-</Typo>
+        <Typo size={24} weight={500}>{props.name ?? '-'}</Typo>
       </Flex>
       <Flex
         className={s.preview}
