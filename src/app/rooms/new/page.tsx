@@ -9,6 +9,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { getApiUrl } from '@/utils/api'
 import { getAccessToken } from '@/utils/auth'
+import { useRouter } from 'next/navigation'
 
 import s from './page.module.scss'
 
@@ -16,6 +17,7 @@ export default function NewRoomPage() {
   const [subject, setSubject] = useState('')
   const [memberLimit, setMemberLimit] = useState(1)
   const [explanationSeconds, setExplanationSeconds] = useState(30)
+  const router = useRouter()
 
   const onClickCreate = async () => {
     const body = { subject, memberLimit, explanationSeconds }
@@ -27,8 +29,10 @@ export default function NewRoomPage() {
     },
       body: JSON.stringify(body),
     })
-    const data = await res.json()
-    console.log(data)
+    const { data } = await res.json()
+    const { roomId } = data
+    
+    router.push(`/rooms/${roomId}`)
   }
 
   return <>

@@ -13,6 +13,7 @@ import RoomsTableItemSkeleton from '@/components/page/rooms/Item/Skeleton'
 import Link from 'next/link'
 
 import s from './page.module.scss'
+import classNames from 'classnames'
 
 export default function RoomsPage() {
   const [rooms, setRooms] = useState<Array<Room>>([])
@@ -40,6 +41,16 @@ export default function RoomsPage() {
     setLoading(false)
   }
 
+  const onClickPrev = () => {
+    if (currentPage === 0) return
+    setCurrentPage(prev => prev - 1)
+  }
+
+  const onClickNext = () => {
+    if (currentPage === totalPages) return
+    setCurrentPage(prev => prev + 1)
+  }
+
   useEffect(() => {
     fetchRooms()
   }, [currentPage, accessToken])
@@ -63,7 +74,27 @@ export default function RoomsPage() {
       </VStack>
       <HStack align='end' justify='between'>
         <Spacer width='189px' />
-        <Typo size={18} color={Color.Gray1}>{currentPage + 1} / {totalPages + 1}</Typo>
+
+        <HStack align='center' justify='center' gap={30}>
+          <img
+            className={classNames(
+              s.button,
+              currentPage === 0 && s.disabled
+            )}
+            src='/assets/angle-left.svg'
+            onClick={onClickPrev}
+          />
+          <Typo size={18} color={Color.Gray1}>{currentPage + 1} / {totalPages + 1}</Typo>
+          <img
+            className={classNames(
+              s.button,
+              currentPage === totalPages && s.disabled
+            )}
+            src='/assets/angle-right.svg'
+            onClick={onClickNext}
+          />
+        </HStack>
+        
         <Link href='/rooms/new'>
           <Button style={{ width: 189 }}>
             <Typo size={18} weight={600}>+ 새로 만들기</Typo>

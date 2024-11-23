@@ -1,3 +1,14 @@
 .page {
   padding: 100px;
 }
+
+.button {
+  padding: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
