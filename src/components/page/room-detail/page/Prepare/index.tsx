@@ -17,17 +17,29 @@ export default function RoomDetailPrepare() {
   const router = useRouter()
 
   const onClickLeave = async () => {
-    await fetch(getApiUrl(`/room/${ROOM_ID}/exit`), {
+    const res = await fetch(getApiUrl(`/room/${ROOM_ID}/exit`), {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${getAccessToken()}`,
       },
     })
-    router.push('/rooms')
+    if (res.ok) {
+      router.push('/rooms')
+    } else {
+      alert('방 나가기에 실패했습니다.')
+    }
   }
 
   const onClickStart = async () => {
-
+    const res = await fetch(getApiUrl(`/room/${ROOM_ID}/round/1/start`), {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${getAccessToken()}`,
+      },
+    })
+    if (!res.ok) {
+      alert('게임 시작에 실패했습니다.')
+    }
   }
 
   return <>

@@ -27,9 +27,9 @@ export default function RoomDetailPage(props: IParams<'id'>) {
 
   return <>
     <RoomDetailContext.Provider value={{
+      currentPage, setCurrentPage,
       members, setMembers,
       ROOM_ID: roomId,
-      CURRENT_PAGE: currentPage,
     }}>
       <VStack align='center' justify='center' fullHeight>{
         currentPage === 'prepare' ? <RoomDetailPrepare /> :
