@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation'
 import s from './style.module.scss'
 
 export default function RoomDetailPrepare() {
-  const { ROOM_ID, members } = useContext(RoomDetailContext)
+  const { ROOM_ID, members, stompClient } = useContext(RoomDetailContext)
   const router = useRouter()
 
   const onClickLeave = async () => {
@@ -31,15 +31,12 @@ export default function RoomDetailPrepare() {
   }
 
   const onClickStart = async () => {
-    const res = await fetch(getApiUrl(`/room/${ROOM_ID}/round/1/start`), {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${getAccessToken()}`,
-      },
-    })
-    if (!res.ok) {
-      alert('게임 시작에 실패했습니다.')
+    if (!stompClient) {
+      alert('서버와 연결되지 않았습니다.')
+      return
     }
+
+    stompClient.send('/app/game-start', {}, ROOM_ID.toString())
   }
 
   return <>
